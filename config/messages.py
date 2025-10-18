@@ -10,11 +10,14 @@ class LogMessages:
     """
 
     # System initialization messages
-    SYSTEM_START = "IT Infrastructure Analysis System initialization started"
-    SYSTEM_READY = "IT Infrastructure Analysis System ready"
+    SYSTEM_START = "Software Infrastructure Analysis System initialization started"
+    SYSTEM_READY = "Software Infrastructure Analysis System ready"
     DATA_LOAD_START = "Starting data loading process from JSON file"
     DATA_LOAD_SUCCESS = "Data successfully loaded from file: {}"
     DATA_LOAD_ERROR = "Error loading data from file: {} - {}"
+    START_CREATE_DATAFRAME = "Start create dataframe {}"
+    SUCCESS_CREATE_DATAFRAME = "Success create dataframe {}"
+    ERROR_CREATE_DATAFRAME = "Erro create dataframe {} - {}"
 
     # Analysis process messages
     ANALYSIS_START = "Starting {} analysis"
@@ -23,11 +26,11 @@ class LogMessages:
 
     # Data processing messages
     DATA_PROCESSING_START = "Starting data processing for {}"
-    DATA_FILTERING_START = "Filtering IT equipment from dataset"
+    DATA_FILTERING_START = "Filtering Software equipment from dataset"
     DATA_TRANSFORMATION_START = "Starting data transformation"
 
     # Equipment analysis messages
-    EQUIPMENT_COUNT = "Total IT equipment identified: {} units"
+    EQUIPMENT_COUNT = "Total Software equipment identified: {} units"
     EQUIPMENT_COST_CALCULATION = "Calculating total equipment costs"
     UTILIZATION_CALCULATION = "Calculating equipment utilization metrics"
     MAINTENANCE_COST_CALCULATION = "Calculating maintenance costs"
