@@ -15,6 +15,28 @@ class LogMessages:
     PROJECT_ROI_CALCULATION = "Calculating average ROI for all projects"
     TOP_PROFIT_PROJECT_IDENTIFICATION = "Identifying project with highest profit"
 
+    # Orchestrator
+    ORCHESTRATOR_INIT = "Orchestrator initialized with data file: {}"
+    DATA_FILE_VERIFIED = "Data file verification successful"
+    ANALYSIS_START = "Comprehensive {} analysis started"
+    ANALYSIS_COMPLETE = "Comprehensive {} analysis completed successfully"
+    ANALYSIS_MODULE_START = "{} analysis module execution started"
+    ANALYSIS_MODULE_SUCCESS = "{} analysis module executed successfully"
+    GENERATING_SUMMARY_REPORT = "Generating comprehensive summary report"
+    SUMMARY_REPORT_SAVED = "Summary report saved to logs/analysis_summary.txt"
+    
+    # PDF Generator
+    PDF_GENERATION_STARTED = "PDF report generation started"
+    PDF_PAGE_ADDED = "{} page added to PDF"
+    PDF_SAVED = "PDF report saved successfully to {}"
+    PDF_GENERATION_ERROR = "Error during PDF generation: {}"
+    TEMP_FILES_CLEANED = "Temporary chart files cleaned up"
+    
+    # Errors
+    FILE_NOT_FOUND = "Data file not found: {}"
+    ANALYSIS_ERROR = "Error during {} analysis: {}"
+    MAIN_EXECUTION_ERROR = "Critical error in main execution: {}"
+
 
     # System initialization messages
     SYSTEM_START = "Software Infrastructure Analysis System initialization started"

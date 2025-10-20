@@ -11,6 +11,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from utils.logger import analysis_logger
 from anlyzers.basic_statistics import BasicStaticAnalayzer
 from anlyzers.finance_analize import FinanceAnalayzer
 from anlyzers.project_analyze import ProjectAnalayzer
@@ -36,6 +37,9 @@ class POInfrastructureAnalysisOrchestrator:
         """
         self.json_data_file_path = json_data_file_path
         self.analysis_results_collection = {}
+        self.logger = analysis_logger.get_analysis_logger("POInfrastructureAnalysisOrchestrator")
+
+        self.logger.info(LogMessages.ORCHESTRATOR_INIT.format(json_data_file_path))
         
         # Verify file exists before initializing analyzers
         self._verify_data_file_exists()
@@ -47,16 +51,17 @@ class POInfrastructureAnalysisOrchestrator:
         self.skills_analize_module = SkillsAnalayzer(json_data_file_path)
         self.recomendation_analuze_module = RecommendationsAnalayzer(json_data_file_path)
 
+        self.logger.info(LogMessages.DATA_FILE_VERIFIED)
+
     def _verify_data_file_exists(self):
         """
         @brief Verify that the data file exists before analysis
         Provides clear error message if file is not found
         """
         if not os.path.exists(self.json_data_file_path):
-            error_message = f"Data file not found: {self.json_data_file_path}"
-            print(f"ERROR: {error_message}")
-            print("Please ensure the JSON data file exists in the specified path")
-            raise FileNotFoundError(error_message)
+            error_msg = LogMessages.FILE_NOT_FOUND.format(self.json_data_file_path)
+            self.logger.error(error_msg)
+            raise FileNotFoundError(error_msg)
 
     def execute_comprehensive_analysis(self):
         """
@@ -65,38 +70,53 @@ class POInfrastructureAnalysisOrchestrator:
 
         @return: Dictionary containing all analysis results
         """
+        self.logger.info(LogMessages.ANALYSIS_START.format("comprehensive PO infrastructure"))
         print("INITIATING COMPREHENSIVE PO INFRASTRUCTURE ANALYSIS")
         print("=" * 70)
 
         try:
             # Execute all analysis modules
+            self.logger.info(LogMessages.ANALYSIS_MODULE_START.format("Employee Static"))
             print("\nEXECUTING EMPLOYEES STATIC ANALYSIS...")
             basic_static_analysis_results = self.basic_static_analysis_module.execute_analysis()
             self.analysis_results_collection['basic_static'] = basic_static_analysis_results
+            self.logger.info(LogMessages.ANALYSIS_MODULE_SUCCESS.format("Employee Static"))
 
+            self.logger.info(LogMessages.ANALYSIS_MODULE_START.format("Finance"))
             print("\nEXECUTING FINANCE ANALYSIS...")
             finance_analysis_results = self.finance_analize_module.execute_analysis()
             self.analysis_results_collection['finance'] = finance_analysis_results
+            self.logger.info(LogMessages.ANALYSIS_MODULE_SUCCESS.format("Finance"))
 
+            self.logger.info(LogMessages.ANALYSIS_MODULE_START.format("Project"))
             print("\nEXECUTING PROJECT ANALYSIS...")
             project_analysis_results = self.project_analize_module.execute_analysis()
             self.analysis_results_collection['project'] = project_analysis_results
+            self.logger.info(LogMessages.ANALYSIS_MODULE_SUCCESS.format("Project"))
 
+            self.logger.info(LogMessages.ANALYSIS_MODULE_START.format("Skills"))
             print("\nEXECUTING SKILLS ANALYSIS...")
             skills_analysis_results = self.skills_analize_module.execute_analysis()
             self.analysis_results_collection['skills'] = skills_analysis_results
+            self.logger.info(LogMessages.ANALYSIS_MODULE_SUCCESS.format("Skills"))
 
+            self.logger.info(LogMessages.ANALYSIS_MODULE_START.format("Strategic Recommendations"))
             print("\nGENERATING STRATEGIC RECOMMENDATIONS...")
             recommendation_analysis_results = self.recomendation_analuze_module.execute_analysis(basic_static_analysis_results,finance_analysis_results,skills_analysis_results)
             self.analysis_results_collection['recommendation'] = recommendation_analysis_results
+            self.logger.info(LogMessages.ANALYSIS_MODULE_SUCCESS.format("Strategic Recommendations"))
 
             # Generate final comprehensive report
+            self.logger.info(LogMessages.GENERATING_SUMMARY_REPORT)
             summary_text = self._generate_comprehensive_summary_report()
-            self.analysis_results_collection['summary_text'] = summary_text  # сохраняем
+            self.analysis_results_collection['summary_text'] = summary_text
+            self.logger.info(LogMessages.SUMMARY_REPORT_SAVED)
 
+            self.logger.info(LogMessages.ANALYSIS_COMPLETE.format("Comprehensive PO Infrastructure"))
             return self.analysis_results_collection
 
         except Exception as comprehensive_analysis_error:
+            self.logger.error(LogMessages.ANALYSIS_ERROR.format("comprehensive", str(comprehensive_analysis_error)))
             print(f"\nCOMPREHENSIVE ANALYSIS FAILED: {str(comprehensive_analysis_error)}")
             raise comprehensive_analysis_error
 
@@ -206,6 +226,7 @@ class PDFReportGenerator:
         """
         self.analysis_results = analysis_results
         self.employee_df = employee_df
+        self.logger = analysis_logger.get_analysis_logger("PDFReportGenerator")
         self.project_df = project_df
         
         self.pdf = FPDF()
@@ -266,6 +287,7 @@ class PDFReportGenerator:
         for line in summary.split("\n"):
             self.pdf.multi_cell(0, 5, line)
             self.pdf.ln(1)
+        self.logger.info(LogMessages.PDF_PAGE_ADDED.format("Executive Summary"))
 
     def generate_basic_statistics_charts(self):
         """
@@ -294,6 +316,7 @@ class PDFReportGenerator:
         ax.pie(pos_dist['Count'], labels=pos_dist['Category'], autopct='%1.1f%%', startangle=90)
         ax.set_title("Position Distribution")
         self._add_chart(fig, "Position Distribution (Junior/Middle/Senior/TeamLead)", 120)
+        self.logger.info(LogMessages.PDF_PAGE_ADDED.format("Employee Statistics"))
 
     def generate_finance_charts(self):
         """
@@ -328,6 +351,7 @@ class PDFReportGenerator:
         ax.set_title("Top 5 Highest Salaries")
         ax.ticklabel_format(style='plain', axis='x')
         self._add_chart(fig, "Top 5 Highest Paid Employees", 80)
+        self.logger.info(LogMessages.PDF_PAGE_ADDED.format("Financial Analysis"))
 
     def generate_project_charts(self):
         """
@@ -352,6 +376,7 @@ class PDFReportGenerator:
             ax.set_xlabel("ROI (%)")
             ax.set_ylabel("Number of Projects")
             self._add_chart(fig, "ROI Distribution Across Projects", 80)
+        self.logger.info(LogMessages.PDF_PAGE_ADDED.format("Project Analysis"))
 
     def generate_recommendations_page(self):
         """
@@ -382,6 +407,7 @@ class PDFReportGenerator:
             self.pdf.cell(0, 6, f"• Estimated FOT savings: {impact['fot_savings_potential']:,.0f} RUB")
         else:
             self.pdf.multi_cell(0, 6, "• Insufficient data for impact calculation.")
+        self.logger.info(LogMessages.PDF_PAGE_ADDED.format("Strategic Recommendations"))
 
     def save_pdf(self, output_path="PO_Analysis_Report.pdf"):
         """
@@ -420,12 +446,14 @@ class PDFReportGenerator:
             self.generate_recommendations_page()
 
             self.pdf.output(output_path)
+            self.logger.info(LogMessages.PDF_SAVED.format(output_path))
             print(f"\nPDF report saved as: {output_path}")
 
         finally:
             for path in self.temp_files:
                 if os.path.exists(path):
                     os.remove(path)
+            self.logger.info(LogMessages.TEMP_FILES_CLEANED)
 
 def main():
     """
@@ -433,6 +461,7 @@ def main():
     Handles command line arguments and orchestrates analysis execution
     """
     # Configuration - update this path to match your JSON file
+    logger = analysis_logger.get_analysis_logger("main")
     company_data_json_file_path = "company.json"  # Changed from company_data_detailed.json
     with open("DejaVuSans.ttf", "rb") as f:
         print("Font file readable, size:", len(f.read()))
@@ -453,10 +482,12 @@ def main():
         print(f"Log files generated in 'logs/' directory")
 
     except FileNotFoundError as file_error:
+        logger.error(LogMessages.FILE_NOT_FOUND.format(company_data_json_file_path))
         print(f"\nFILE ERROR: {str(file_error)}")
         print("Please check the file path and ensure the JSON file exists")
         sys.exit(1)
     except Exception as main_execution_error:
+        logger.critical(LogMessages.MAIN_EXECUTION_ERROR.format(str(main_execution_error)))
         print(f"\nCRITICAL ERROR DURING ANALYSIS EXECUTION: {str(main_execution_error)}")
         sys.exit(1)
 
