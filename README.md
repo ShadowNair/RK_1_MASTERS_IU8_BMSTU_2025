@@ -293,80 +293,84 @@
 
   # Logi
 ## Basic
-```
-2025-10-20 06:21:30,894 - Basic Statistics - INFO - Software Infrastructure Analysis System initialization started
-2025-10-20 06:21:30,894 - Basic Statistics - INFO - Starting data loading process from JSON file
-2025-10-20 06:21:30,912 - Basic Statistics - INFO - Data successfully loaded from file: {}
-2025-10-20 06:21:30,912 - Basic Statistics - INFO - Starting data processing for Basic Statistics
-2025-10-20 06:21:30,912 - Basic Statistics - INFO - Start create dataframe department PO
-2025-10-20 06:21:30,915 - Basic Statistics - INFO - Start create dataframe employees PO
-2025-10-20 06:21:30,919 - Basic Statistics - INFO - Start create dataframe project PO
-2025-10-20 06:21:31,002 - Basic Statistics - INFO - Starting Basic statics analysis
-2025-10-20 06:21:31,002 - Basic Statistics - INFO - Calculating avarage parametrs
-2025-10-20 06:21:31,003 - Basic Statistics - INFO - Count Junior/Middle/Senior/TeamLead level
-2025-10-20 06:21:31,003 - Basic Statistics - INFO - Create column for category employee from position
-2025-10-20 06:21:31,004 - Basic Statistics - INFO - Define employees with perfomance_score > 90
-2025-10-20 06:21:31,008 - Basic Statistics - INFO - Basic Statistics analysis completed successfully
-```
+
+    ```
+    2025-10-20 06:21:30,894 - Basic Statistics - INFO - Software Infrastructure Analysis System initialization started
+    2025-10-20 06:21:30,894 - Basic Statistics - INFO - Starting data loading process from JSON file
+    2025-10-20 06:21:30,912 - Basic Statistics - INFO - Data successfully loaded from file: {}
+    2025-10-20 06:21:30,912 - Basic Statistics - INFO - Starting data processing for Basic Statistics
+    2025-10-20 06:21:30,912 - Basic Statistics - INFO - Start create dataframe department PO
+    2025-10-20 06:21:30,915 - Basic Statistics - INFO - Start create dataframe employees PO
+    2025-10-20 06:21:30,919 - Basic Statistics - INFO - Start create dataframe project PO
+    2025-10-20 06:21:31,002 - Basic Statistics - INFO - Starting Basic statics analysis
+    2025-10-20 06:21:31,002 - Basic Statistics - INFO - Calculating avarage parametrs
+    2025-10-20 06:21:31,003 - Basic Statistics - INFO - Count Junior/Middle/Senior/TeamLead level
+    2025-10-20 06:21:31,003 - Basic Statistics - INFO - Create column for category employee from position
+    2025-10-20 06:21:31,004 - Basic Statistics - INFO - Define employees with perfomance_score > 90
+    2025-10-20 06:21:31,008 - Basic Statistics - INFO - Basic Statistics analysis completed successfully
+    ```
 ## Finance
-```
-2025-10-20 06:21:30,920 - Finance Departament - INFO - Software Infrastructure Analysis System initialization started
-2025-10-20 06:21:30,920 - Finance Departament - INFO - Starting data loading process from JSON file
-2025-10-20 06:21:30,938 - Finance Departament - INFO - Data successfully loaded from file: {}
-2025-10-20 06:21:30,938 - Finance Departament - INFO - Starting data processing for Finance Departament
-2025-10-20 06:21:30,938 - Finance Departament - INFO - Start create dataframe department PO
-2025-10-20 06:21:30,939 - Finance Departament - INFO - Start create dataframe employees PO
-2025-10-20 06:21:30,943 - Finance Departament - INFO - Start create dataframe project PO
-2025-10-20 06:21:31,008 - Finance Departament - INFO - Starting Finance Departament analysis
-2025-10-20 06:21:31,008 - Finance Departament - INFO - Calculating avarage parametrs
-2025-10-20 06:21:31,010 - Finance Departament - INFO - Comparing FOT with department budget
-2025-10-20 06:21:31,010 - Finance Departament - INFO - Retrieving top 5 highest salaries
-2025-10-20 06:21:31,014 - Finance Departament - INFO - Finance analyze analysis completed successfully
-```
+
+    ```
+    2025-10-20 06:21:30,920 - Finance Departament - INFO - Software Infrastructure Analysis System initialization started
+    2025-10-20 06:21:30,920 - Finance Departament - INFO - Starting data loading process from JSON file
+    2025-10-20 06:21:30,938 - Finance Departament - INFO - Data successfully loaded from file: {}
+    2025-10-20 06:21:30,938 - Finance Departament - INFO - Starting data processing for Finance Departament
+    2025-10-20 06:21:30,938 - Finance Departament - INFO - Start create dataframe department PO
+    2025-10-20 06:21:30,939 - Finance Departament - INFO - Start create dataframe employees PO
+    2025-10-20 06:21:30,943 - Finance Departament - INFO - Start create dataframe project PO
+    2025-10-20 06:21:31,008 - Finance Departament - INFO - Starting Finance Departament analysis
+    2025-10-20 06:21:31,008 - Finance Departament - INFO - Calculating avarage parametrs
+    2025-10-20 06:21:31,010 - Finance Departament - INFO - Comparing FOT with department budget
+    2025-10-20 06:21:31,010 - Finance Departament - INFO - Retrieving top 5 highest salaries
+    2025-10-20 06:21:31,014 - Finance Departament - INFO - Finance analyze analysis completed successfully
+    ```
 ## Project
-```
-2025-10-20 06:21:30,944 - Project - INFO - Software Infrastructure Analysis System initialization started
-2025-10-20 06:21:30,944 - Project - INFO - Starting data loading process from JSON file
-2025-10-20 06:21:30,959 - Project - INFO - Data successfully loaded from file: {}
-2025-10-20 06:21:30,959 - Project - INFO - Starting data processing for Project
-2025-10-20 06:21:30,959 - Project - INFO - Start create dataframe department PO
-2025-10-20 06:21:30,960 - Project - INFO - Start create dataframe employees PO
-2025-10-20 06:21:30,963 - Project - INFO - Start create dataframe project PO
-2025-10-20 06:21:31,014 - Project - INFO - Starting Project analysis
-2025-10-20 06:21:31,014 - Project - INFO - Analyzing project status distribution
-2025-10-20 06:21:31,015 - Project - INFO - Calculating average ROI for all projects
-2025-10-20 06:21:31,015 - Project - INFO - Identifying project with highest profit
-2025-10-20 06:21:31,016 - Project - INFO - Project analysis completed successfully
-```
+    ```
+    2025-10-20 06:21:30,944 - Project - INFO - Software Infrastructure Analysis System initialization started
+    2025-10-20 06:21:30,944 - Project - INFO - Starting data loading process from JSON file
+    2025-10-20 06:21:30,959 - Project - INFO - Data successfully loaded from file: {}
+    2025-10-20 06:21:30,959 - Project - INFO - Starting data processing for Project
+    2025-10-20 06:21:30,959 - Project - INFO - Start create dataframe department PO
+    2025-10-20 06:21:30,960 - Project - INFO - Start create dataframe employees PO
+    2025-10-20 06:21:30,963 - Project - INFO - Start create dataframe project PO
+    2025-10-20 06:21:31,014 - Project - INFO - Starting Project analysis
+    2025-10-20 06:21:31,014 - Project - INFO - Analyzing project status distribution
+    2025-10-20 06:21:31,015 - Project - INFO - Calculating average ROI for all projects
+    2025-10-20 06:21:31,015 - Project - INFO - Identifying project with highest profit
+    2025-10-20 06:21:31,016 - Project - INFO - Project analysis completed successfully
+    ```
 ## Skills
-```
-2025-10-20 06:21:30,963 - Skills - INFO - Software Infrastructure Analysis System initialization started
-2025-10-20 06:21:30,963 - Skills - INFO - Starting data loading process from JSON file
-2025-10-20 06:21:30,979 - Skills - INFO - Data successfully loaded from file: {}
-2025-10-20 06:21:30,979 - Skills - INFO - Starting data processing for Skills
-2025-10-20 06:21:30,979 - Skills - INFO - Start create dataframe department PO
-2025-10-20 06:21:30,980 - Skills - INFO - Start create dataframe employees PO
-2025-10-20 06:21:30,983 - Skills - INFO - Start create dataframe project PO
-2025-10-20 06:21:31,016 - Skills - INFO - Starting Skills analysis
-2025-10-20 06:21:31,016 - Skills - INFO - Building employee skill matrix
-2025-10-20 06:21:31,018 - Skills - INFO - Analyzing skill demand and rarity
-2025-10-20 06:21:31,019 - Skills - INFO - Searching for Python + Docker experts
-2025-10-20 06:21:31,025 - Skills - INFO - Skills analysis completed successfully
-```
+
+    ```
+    2025-10-20 06:21:30,963 - Skills - INFO - Software Infrastructure Analysis System initialization started
+    2025-10-20 06:21:30,963 - Skills - INFO - Starting data loading process from JSON file
+    2025-10-20 06:21:30,979 - Skills - INFO - Data successfully loaded from file: {}
+    2025-10-20 06:21:30,979 - Skills - INFO - Starting data processing for Skills
+    2025-10-20 06:21:30,979 - Skills - INFO - Start create dataframe department PO
+    2025-10-20 06:21:30,980 - Skills - INFO - Start create dataframe employees PO
+    2025-10-20 06:21:30,983 - Skills - INFO - Start create dataframe project PO
+    2025-10-20 06:21:31,016 - Skills - INFO - Starting Skills analysis
+    2025-10-20 06:21:31,016 - Skills - INFO - Building employee skill matrix
+    2025-10-20 06:21:31,018 - Skills - INFO - Analyzing skill demand and rarity
+    2025-10-20 06:21:31,019 - Skills - INFO - Searching for Python + Docker experts
+    2025-10-20 06:21:31,025 - Skills - INFO - Skills analysis completed successfully
+    ```
 ## Recommendation
-```
-2025-10-20 06:21:30,983 - Recommendations - INFO - Software Infrastructure Analysis System initialization started
-2025-10-20 06:21:30,983 - Recommendations - INFO - Starting data loading process from JSON file
-2025-10-20 06:21:30,998 - Recommendations - INFO - Data successfully loaded from file: {}
-2025-10-20 06:21:30,998 - Recommendations - INFO - Starting data processing for Recommendations
-2025-10-20 06:21:30,998 - Recommendations - INFO - Start create dataframe department PO
-2025-10-20 06:21:30,999 - Recommendations - INFO - Start create dataframe employees PO
-2025-10-20 06:21:31,002 - Recommendations - INFO - Start create dataframe project PO
-2025-10-20 06:21:31,025 - Recommendations - INFO - Starting Recommendations analysis
-2025-10-20 06:21:31,025 - Recommendations - INFO - Generating efficiency improvement recommendations
-2025-10-20 06:21:31,026 - Recommendations - INFO - Identifying employee training needs
-2025-10-20 06:21:31,026 - Recommendations - INFO - Calculating financial impact of productivity increase
-2025-10-20 06:21:31,026 - Recommendations - INFO - Recommendations analysis completed successfully
-```
+
+    ```
+    2025-10-20 06:21:30,983 - Recommendations - INFO - Software Infrastructure Analysis System initialization started
+    2025-10-20 06:21:30,983 - Recommendations - INFO - Starting data loading process from JSON file
+    2025-10-20 06:21:30,998 - Recommendations - INFO - Data successfully loaded from file: {}
+    2025-10-20 06:21:30,998 - Recommendations - INFO - Starting data processing for Recommendations
+    2025-10-20 06:21:30,998 - Recommendations - INFO - Start create dataframe department PO
+    2025-10-20 06:21:30,999 - Recommendations - INFO - Start create dataframe employees PO
+    2025-10-20 06:21:31,002 - Recommendations - INFO - Start create dataframe project PO
+    2025-10-20 06:21:31,025 - Recommendations - INFO - Starting Recommendations analysis
+    2025-10-20 06:21:31,025 - Recommendations - INFO - Generating efficiency improvement recommendations
+    2025-10-20 06:21:31,026 - Recommendations - INFO - Identifying employee training needs
+    2025-10-20 06:21:31,026 - Recommendations - INFO - Calculating financial impact of productivity increase
+    2025-10-20 06:21:31,026 - Recommendations - INFO - Recommendations analysis completed successfully
+    ```
 
 
