@@ -64,7 +64,32 @@ for project in data.get("projects", []):
         }
         project_records.append(project_record)
 
+def map_to_category(pos):
+    pos_lower = pos.lower()
+    
+    if 'стажер' in pos_lower:
+        return 'trainee'
+    
+    if any(kw in pos_lower for kw in ['junior', 'младший']):
+        return 'junior'
+    
+    if any(kw in pos_lower for kw in ['team lead', 'технический руководитель', 'head of', 'руководитель']):
+        return 'teamlead'
+    
+    if any(kw in pos_lower for kw in ['инженер-программист', 'разработчик']) and not any(
+        s in pos_lower for s in ['старший', 'ведущий', 'главный', 'архитектор']
+    ):
+        return 'middle'
+    
+    if any(kw in pos_lower for kw in [
+        'старший', 'ведущий', 'архитектор', 'devops', 'senior'
+    ]):
+        return 'senior'
+    
+    return 'senior'
+
 project_dataframe = pd.DataFrame(project_records)
+employee_dataframe['categiry'] = employee_dataframe['position'].apply(map_to_category)
 
 print(employee_dataframe["hire_date"])
 print(department_dataframe)

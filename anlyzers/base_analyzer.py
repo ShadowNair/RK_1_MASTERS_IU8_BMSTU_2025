@@ -8,7 +8,7 @@ import json
 from utils.logger import analysis_logger
 from config.messages import LogMessages
 
-class BaseAnalysis:
+class BaseAnalyzer:
     """
     @brief Base class for all technical department performance analysis
     Implements common data loading and processing functionality
@@ -30,6 +30,7 @@ class BaseAnalysis:
         self.po_department_dataframe = None
         self.po_employee_dataframe = None
         self.po_project_dataframe = None
+        self.data_create = None
 
         self.logger.info(LogMessages.SYSTEM_START)
         self._load_data()
@@ -76,6 +77,8 @@ class BaseAnalysis:
                     break
 
             self.po_department_dataframe = pd.DataFrame(department_records)
+            self.data_create = pd.to_datetime(self.data['metadata']['generation_date'])
+            
         except Exception as dataframe_error:
             error_message = LogMessages.DATA_LOAD_ERROR.format("department", str(dataframe_error))
             self.logger.error(error_message)

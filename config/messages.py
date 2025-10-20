@@ -9,6 +9,13 @@ class LogMessages:
     Standardized messages for different logging levels and operations
     """
 
+
+    # Project analysis messages
+    PROJECT_STATUS_ANALYSIS = "Analyzing project status distribution"
+    PROJECT_ROI_CALCULATION = "Calculating average ROI for all projects"
+    TOP_PROFIT_PROJECT_IDENTIFICATION = "Identifying project with highest profit"
+
+
     # System initialization messages
     SYSTEM_START = "Software Infrastructure Analysis System initialization started"
     SYSTEM_READY = "Software Infrastructure Analysis System ready"
@@ -18,6 +25,16 @@ class LogMessages:
     START_CREATE_DATAFRAME = "Start create dataframe {}"
     SUCCESS_CREATE_DATAFRAME = "Success create dataframe {}"
     ERROR_CREATE_DATAFRAME = "Erro create dataframe {} - {}"
+
+    # Recommendations analysis messages
+    EFFICIENCY_RECOMMENDATIONS = "Generating efficiency improvement recommendations"
+    TRAINING_NEEDS_IDENTIFICATION = "Identifying employee training needs"
+    PRODUCTIVITY_IMPACT_CALCULATION = "Calculating financial impact of productivity increase"
+
+    # Skills analysis messages
+    SKILL_MATRIX_BUILDING = "Building employee skill matrix"
+    SKILL_DEMAND_ANALYSIS = "Analyzing skill demand and rarity"
+    PYTHON_DOCKER_EXPERTS_SEARCH = "Searching for Python + Docker experts"
 
     # Analysis process messages
     ANALYSIS_START = "Starting {} analysis"
@@ -29,11 +46,16 @@ class LogMessages:
     DATA_FILTERING_START = "Filtering Software equipment from dataset"
     DATA_TRANSFORMATION_START = "Starting data transformation"
 
-    # Equipment analysis messages
-    EQUIPMENT_COUNT = "Total Software equipment identified: {} units"
-    EQUIPMENT_COST_CALCULATION = "Calculating total equipment costs"
-    UTILIZATION_CALCULATION = "Calculating equipment utilization metrics"
-    MAINTENANCE_COST_CALCULATION = "Calculating maintenance costs"
+    # Finance analysis messages
+    EFOT_CALCULATION_START = "Calculating Fund of Wages (FOT) for all employees"
+    BUDGET_COMPARISON_START = "Comparing FOT with department budget"
+    TOP_SALARIES_RETRIEVAL = "Retrieving top 5 highest salaries"
+
+    # Employees analisis messages
+    EMPLOYEE_PARAMETR_CALCULATION = "Calculating avarage parametrs"
+    EMPLOYEE_WORK_LEVEL = "Count Junior/Middle/Senior/TeamLead level"
+    EMPLOYEE_PERFOMANCE = "Define employees with perfomance_score > 90"
+    EMPLOYEE_CATEGORY = "Create column for category employee from position"
 
 class ReportMessages:
     """
@@ -41,18 +63,51 @@ class ReportMessages:
     Standardized output messages for different analysis sections
     """
 
+    # Project report messages
+    PROJECT_HEADER = "PO DEPARTMENT PROJECT ANALYSIS"
+
+    TOTAL_PROJECTS = "Total projects analyzed: {}"
+    AVERAGE_ROI = "Average ROI across projects: {:.2f}"
+    PROJECT_STATUS_DISTRIBUTION = "Project Status Distribution:"
+    TOP_PROFIT_PROJECT = "Most Profitable Project:"
+
+    # Skills report messages
+    SKILLS_HEADER = "EMPLOYEE SKILLS ANALYSIS"
+    SKILL_MATRIX_HEADER = "Skill Matrix (+: has skill, -: no skill):"
+    TOTAL_EMPLOYEES_SKILLS = "Total employees analyzed for skills: {}"
+    MOST_IN_DEMAND_SKILLS = "Most In-Demand Skills (Top 5):"
+    RARE_SKILLS = "Rare Skills (≤1 employee):"
+    PYTHON_DOCKER_EXPERTS_COUNT = "Employees with Python and Docker: {}"
+
     # Section headers
     INVENTORY_HEADER = "EQUIPMENT INVENTORY ANALYSIS"
     UTILIZATION_HEADER = "EQUIPMENT UTILIZATION ANALYSIS"
     COST_HEADER = "COST ANALYSIS"
     REPLACEMENT_HEADER = "EQUIPMENT REPLACEMENT PLANNING"
     OPTIMIZATION_HEADER = "INFRASTRUCTURE OPTIMIZATION"
+    STATIC_HEADER = "EMPLOYEE BASIC STATIC ANALYSIS"
+
+    # Recommendations report messages
+    RECOMMENDATIONS_HEADER = "STRATEGIC RECOMMENDATIONS FOR PO DEPARTMENT"
+
+    EFFICIENCY_MEASURES_HEADER = "Measures to Improve Department Efficiency:"
+    TRAINING_NEEDS_HEADER = "Identified Training Needs:"
+    PRODUCTIVITY_IMPACT_HEADER = "Potential Impact of +10% Productivity:"
 
     # Results messages
-    TOTAL_EQUIPMENT_COUNT = "Total IT equipment identified: {} units"
-    TOTAL_EQUIPMENT_COST = "Total IT assets value: {:,.0f} RUB"
     AVERAGE_UTILIZATION = "Average equipment utilization rate: {:.1f}%"
-    ANNUAL_MAINTENANCE_COST = "Annual maintenance costs: {:,.0f} RUB"
+    ANNUAL_MAINTENANCE_COST = "Annual maintenance costs: {:,.0f}"
+    TOP_EMPLOYEE_COUNT = "Count employees with performance > 90%: {} employees"
+
+    # Finance report headers and messages
+    FINANCE_HEADER = "FINANCE DEPARTMENT ANALYSIS"
+
+    TOTAL_EMPLOYEES = "Total PO employees: {}"
+    FOT_TOTAL = "Total Fund of Wages (FOT): {:,.0f}"
+    BUDGET_ALLOCATED = "Department budget allocated: {:,.0f}"
+    BUDGET_UTILIZATION = "Budget utilization: {:.2f}"
+
+    TOP_SALARIES_HEADER = "Top 5 Highest Salaries:"
 
     # Recommendation messages
     CONSOLIDATION_RECOMMENDATION = "Recommended consolidation measures"
