@@ -289,7 +289,7 @@
     Potential Impact of +10% Productivity:
     • Estimated FOT savings: 7,400,668 RUB
     • Assumption: 10% рост производительности позволяет снизить фонд оплаты труда на 9% при сохранении объёма работ
-  ```
+
 
 # Logi
 ## Basic
